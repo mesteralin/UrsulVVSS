@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><title>testspec Proiect234 - mcir3365_BBT</title>
+<link type="text/css" rel="stylesheet" href="https://www.scs.ubbcluj.ro/testlink/gui/themes/default/css/tl_documents.css" />
+<style type="text/css" media="print">.notprintable { display:none;}</style>
+</head>
+<body>
+<div>
+<div style="float:right;">TestLink Community [configure $tlCfg-&gt;document_generator-&gt;company_name]</div>
+<div>&nbsp;</div><hr />
+<p style="text-align: center;"><img alt="TestLink logo" title="configure using $tlCfg->document_generator->company_logo"  width= height= src="https://www.scs.ubbcluj.ro/testlink/gui/themes/default/images/tl-logo-transparent-25.png" /></p></div>
+<div class="doc_title"><p>Test Specification</p></div>
+<div class="doc_title" style="text-align:left;margin: auto;"><p>Test Project: Proiect234<br/>Test Suite: Proiect234 - mcir3365_BBT</p></div>
+<div class="summary"><p id="printedby">Printed by TestLink on 16/04/2025</p></div>
+<div class="pagefooter" id="copyright">2012 &copy; TestLink Community</div>
+<h1 class="general" style="page-break-before: always">Table Of Contents</h1><div class="toc"><p style="padding-left: 20px;"><b><a href="#toc_1">1.mcir3365_BBT</a></b></p>
+<p style="padding-left: 45px;"><a href="#toc_tc25875">Prj234-64: AddTask_ECP_Valid</a></p><p style="padding-left: 45px;"><a href="#toc_tc25877">Prj234-65: AddTask_ECP_NonValid</a></p><p style="padding-left: 45px;"><a href="#toc_tc25879">Prj234-66: AddTask_BVA_Valid</a></p><p style="padding-left: 45px;"><a href="#toc_tc25881">Prj234-67: AddTask_BVA_NonValid</a></p></div><h1 class="doclevel" >Scope</h1>
+<div class="txtlevel"><p>Proiect de testare pentru studentii din grupa 234.</p></div>
+ <br/><a name='toc_1'></a>
+<h1 class='doclevel'>1.Test Suite : mcir3365_BBT</h1>
+<div><p>Testează funcționalitatea de adăugare a unei sarcini.</p>
+</div><a name="toc_tc25875"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case Prj234-64: AddTask_ECP_Valid&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">mcir3365</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>C&acirc;nd introduce detaliile unei sarcini, utilizatorul completează c&acirc;mpul pentru titlu cu un șir de caractere valid, av&acirc;nd o lungime cuprinsă &icirc;ntre 1 și 255 de caractere.</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>1 &lt;= len(title) &lt;= 255</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Importance:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td > name of the autotest class:</td><td  colspan = "3" >tasks.service.TaskServiceTest</td></tr>
+<tr><td > name of the test method:</td><td  colspan = "3" >tasks.service.TaskServuceTest#testAddTaskECPValid</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">&nbsp;None<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span></td><td colspan="3">&nbsp;None<br/></td></tr>
+</table>
+</div>
+<a name="toc_tc25877"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case Prj234-65: AddTask_ECP_NonValid&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">mcir3365</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>C&acirc;nd introduce detaliile unei sarcini, utilizatorul completează c&acirc;mpul pentru titlu cu un șir de caractere gol, considerat invalid.</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>len(title) = 0</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Importance:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td > name of the autotest class:</td><td  colspan = "3" >tasks.service.TaskServuceTest</td></tr>
+<tr><td > name of the test method:</td><td  colspan = "3" >tasks.service.TaskServuceTest#testAddTaskECPNonValid</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">&nbsp;None<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span></td><td colspan="3">&nbsp;None<br/></td></tr>
+</table>
+</div>
+<a name="toc_tc25879"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case Prj234-66: AddTask_BVA_Valid&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">mcir3365</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>C&acirc;nd introduce detaliile unei sarcini, utilizatorul selectează opțiunea de repetare și completează un moment valid pentru data și ora de &icirc;ncheiere, care este ulterior datei și orei de &icirc;nceput (cu doar un minut mai t&acirc;rziu, pentru a testa valoarea minimă validă).</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>endDateTime = 2025/04/01 10:01 &gt; startDateTime = 2025/04/01 10:00</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Importance:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td > name of the autotest class:</td><td  colspan = "3" >tasks.service.TaskServuceTest</td></tr>
+<tr><td > name of the test method:</td><td  colspan = "3" >tasks.service.TaskServuceTest#testAddTaskBVAValid</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">&nbsp;None<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span></td><td colspan="3">&nbsp;None<br/></td></tr>
+</table>
+</div>
+<a name="toc_tc25881"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case Prj234-67: AddTask_BVA_NonValid&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">mcir3365</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>C&acirc;nd introduce detaliile unei sarcini, utilizatorul selectează opțiunea de repetare și completează o dată și oră de &icirc;ncheiere invalidă, care este anterioară datei și orei de &icirc;nceput (cu doar un minut mai devreme, pentru a testa cea mai mare valoare invalidă posibilă).</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>endDateTime = 2025/04/01 9:59&nbsp;&lt;&nbsp;startDateTime = 2025/04/01 10:00</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Importance:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td > name of the autotest class:</td><td  colspan = "3" >tasks.service.TaskServuceTest</td></tr>
+<tr><td > name of the test method:</td><td  colspan = "3" >tasks.service.TaskServuceTest#testAddTaskBVAValid</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">&nbsp;None<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span></td><td colspan="3">&nbsp;None<br/></td></tr>
+</table>
+</div>
+
+</body>
+</html>
