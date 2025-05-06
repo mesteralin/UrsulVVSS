@@ -27,3 +27,25 @@
 2025-03-04 18:57:52 INFO  Main:35 - saved data reading
 2025-03-04 18:57:52 INFO  Main:40 - application start
 2025-03-04 18:57:52 INFO  Controller:74 - Main controller initializing
+2025-03-04 19:16:16 INFO  Main:35 - saved data reading
+2025-03-04 19:16:16 INFO  Main:40 - application start
+2025-03-04 19:16:16 INFO  Controller:74 - Main controller initializing
+2025-05-06 17:31:25 INFO  Main:37 - saved data reading
+2025-05-06 17:31:25 INFO  Main:42 - application start
+2025-05-06 17:31:25 ERROR Main:59 - error reading main.fxml
+2025-05-06 17:31:45 INFO  Main:37 - saved data reading
+2025-05-06 17:31:45 INFO  Main:42 - application start
+2025-05-06 17:31:45 ERROR Main:59 - error reading main.fxml
+2025-05-06 17:31:58 INFO  Main:37 - saved data reading
+2025-05-06 17:31:58 INFO  Main:42 - application start
+2025-05-06 17:31:58 ERROR Main:59 - error reading main.fxml
+2025-05-06 17:32:17 INFO  Main:37 - saved data reading
+2025-05-06 17:32:17 INFO  Main:42 - application start
+2025-05-06 17:32:17 ERROR Main:59 - error reading main.fxml
+2025-05-06 19:14:20 INFO  Main:37 - saved data reading
+2025-05-06 19:14:20 INFO  Main:42 - application start
+2025-05-06 19:14:20 ERROR Main:59 - error reading main.fxml
+2025-05-06 19:15:06 INFO  Main:37 - saved data reading
+2025-05-06 19:15:06 INFO  Main:42 - application start
+2025-05-06 19:15:06 INFO  TaskManagerController:74 - Main controller initializing
+2025-05-06 19:15:30 INFO  TaskEditController:92 - new/edit window initializing

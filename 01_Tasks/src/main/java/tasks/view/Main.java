@@ -7,10 +7,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.apache.log4j.Logger;
-import tasks.controller.Controller;
+import tasks.controller.TaskManagerController;
 import tasks.controller.Notificator;
 import tasks.model.ArrayTaskList;
-import tasks.services.TaskIO;
+import tasks.repository.TaskIO;
+import tasks.services.DateService;
 import tasks.services.TasksService;
 
 import java.io.File;
@@ -22,12 +23,13 @@ public class Main extends Application {
     private static final int defaultHeight = 520;
     private static final Logger log = Logger.getLogger(Main.class.getName());
 
-    private ArrayTaskList savedTasksList = new ArrayTaskList();
+    private final ArrayTaskList savedTasksList = new ArrayTaskList();
 
     private static ClassLoader classLoader = Main.class.getClassLoader();
     public static File savedTasksFile = new File("data/tasks.txt");
 
-    private TasksService service = new TasksService(savedTasksList);//savedTasksList);
+    private TasksService tasksService;
+    private DateService dateService;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -39,11 +41,13 @@ public class Main extends Application {
         try {
             log.info("application start");
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/main.fxml"));
-            Parent root = loader.load();//loader.load(this.getClass().getResource("/fxml/main.fxml"));
-            Controller ctrl= loader.getController();
-            service = new TasksService(savedTasksList);
+            Parent root = loader.load();    // loader.load(this.getClass().getResource("/fxml/main.fxml"));
+            TaskManagerController ctrl= loader.getController();
 
-            ctrl.setService(service);
+            dateService = new DateService();
+            tasksService = new TasksService(savedTasksList, dateService);
+
+            ctrl.setService(tasksService, dateService);
             primaryStage.setTitle("Task Manager");
             primaryStage.setScene(new Scene(root, defaultWidth, defaultHeight));
             primaryStage.setMinWidth(defaultWidth);
@@ -55,9 +59,9 @@ public class Main extends Application {
             log.error("error reading main.fxml");
         }
         primaryStage.setOnCloseRequest(we -> {
-                System.exit(0);
-            });
-        new Notificator(FXCollections.observableArrayList(service.getObservableList())).start();
+            System.exit(0);
+        });
+        new Notificator(FXCollections.observableArrayList(tasksService.getObservableList())).start();
     }
 
     public static void main(String[] args) {

@@ -17,7 +17,7 @@ public class Notificator extends Thread {
 
     private ObservableList<Task> tasksList;
 
-    public Notificator(ObservableList<Task> tasksList){
+    public  Notificator(ObservableList<Task> tasksList){
         this.tasksList=tasksList;
     }
 

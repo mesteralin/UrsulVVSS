@@ -15,7 +15,7 @@ import javafx.stage.Stage;
 import org.apache.log4j.Logger;
 import tasks.model.Task;
 import tasks.services.DateService;
-import tasks.services.TaskIO;
+import tasks.repository.TaskIO;
 import tasks.services.TasksService;
 import tasks.view.Main;
 
@@ -24,8 +24,8 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Controller {
-    private static final Logger log = Logger.getLogger(Controller.class.getName());
+public class TaskManagerController {
+    private static final Logger log = Logger.getLogger(TaskManagerController.class.getName());
     public ObservableList<Task> tasksList;
     TasksService service;
     DateService dateService;
@@ -54,9 +54,9 @@ public class Controller {
     @FXML
     private TextField fieldTimeTo;
 
-    public void setService(TasksService service){
-        this.service=service;
-        this.dateService=new DateService(service);
+    public void setService(TasksService tasksService, DateService dateService){
+        this.service=tasksService;
+        this.dateService=dateService;
         this.tasksList=service.getObservableList();
         updateCountLabel(tasksList);
         tasks.setItems(tasksList);
@@ -83,15 +83,15 @@ public class Controller {
     @FXML
     public void showTaskDialog(ActionEvent actionEvent){
         Object source = actionEvent.getSource();
-        NewEditController.setClickedButton((Button) source);
+        TaskEditController.setClickedButton((Button) source);
 
         try {
             editNewStage = new Stage();
-            NewEditController.setCurrentStage(editNewStage);
+            TaskEditController.setCurrentStage(editNewStage);
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/new-edit-task.fxml"));
             Parent root = loader.load();//getClass().getResource("/fxml/new-edit-task.fxml"));
-            NewEditController editCtrl = loader.getController();
-            editCtrl.setService(service);
+            TaskEditController editCtrl = loader.getController();
+            editCtrl.setService(service, dateService);
             editCtrl.setTasksList(tasksList);
             editCtrl.setCurrentTask((Task)mainTable.getSelectionModel().getSelectedItem());
             editNewStage.setScene(new Scene(root, 600, 350));

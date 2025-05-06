@@ -84,6 +84,10 @@ public class LinkedTaskList  extends TaskList {
             throw new IndexOutOfBoundsException("Index not found");
         }
         int stepsBack = size()-index-1;
+        if (isNull(last)) {
+            log.error("list of tasks is empty");
+            throw new NullPointerException("List of tasks is empty");
+        }
         Node current = last;
         while (stepsBack > 0){
             current = current.getLast();
@@ -94,10 +98,10 @@ public class LinkedTaskList  extends TaskList {
 
     @Override
     public List<Task> getAll() {
-        LinkedList<Task> tks=new LinkedList<>();
+        LinkedList<Task> tasks=new LinkedList<>();
         for (Task t: this)
-            tks.add(t);
-        return tks;
+            tasks.add(t);
+        return tasks;
     }
 
     @Override
